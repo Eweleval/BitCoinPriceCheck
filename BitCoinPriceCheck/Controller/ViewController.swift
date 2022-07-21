@@ -13,8 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
 
+    var coinManager = CoinManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        coinManager.delegate = self
+        currencyPicker.delegate = self
+        currencyPicker.dataSource = self
     }
 }
 

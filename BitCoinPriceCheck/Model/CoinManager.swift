@@ -1,0 +1,51 @@
+//
+//  CoinManager.swift
+//  BitCoinPriceCheck
+//
+//  Created by Decagon on 21/07/2022.
+//
+
+import Foundation
+
+protocol CoinManagerDelegate {
+    func didUpdatePrice(price: String, currency: String)
+    func didFailWithError(error: Error)
+}
+
+struct CoinManager {
+    let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
+    
+    let apiKey = "3663759C-0E44-4678-9EAD-8D8E3DF98918" //"YOUR API KEY HERE"
+    let urlString = "https://rest.coinapi.io/v1/exchangerate/BTC/"
+    
+    var delegate: CoinManagerDelegate?
+    
+    func getCoinPrice(for currency: String) {
+        
+        let urlString = "\(urlString)\(currency)?apikey=\(apiKey)"
+        
+        if let url = URL(string: urlString){
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    self.delegate?.didFailWithError(error: error!)
+                    print(error!)
+                    return
+                }
+                if let safeData = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodedData = try decoder.decode(CoinData.self, from: safeData)
+                        let price = decodedData.rate
+                        let priceString = String(format: "%.2f", price)
+                        self.delegate?.didUpdatePrice(price: priceString, currency: currency)
+                    } catch {
+                        self.delegate?.didFailWithError(error: error)
+                        print(error)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+}
