@@ -56,15 +56,55 @@
 		B4C6EF5A288982EA00284A15 /* BitCoinPriceCheck */ = {
 			isa = PBXGroup;
 			children = (
-				B4C6EF5B288982EA00284A15 /* AppDelegate.swift */,
-				B4C6EF5D288982EA00284A15 /* SceneDelegate.swift */,
-				B4C6EF5F288982EA00284A15 /* ViewController.swift */,
-				B4C6EF61288982EA00284A15 /* Main.storyboard */,
-				B4C6EF64288982EC00284A15 /* Assets.xcassets */,
-				B4C6EF66288982EC00284A15 /* LaunchScreen.storyboard */,
-				B4C6EF69288982EC00284A15 /* Info.plist */,
+				B4C6EF6F2889908200284A15 /* Application Delegates */,
+				B4C6EF732889911000284A15 /* Model */,
+				B4C6EF70288990A600284A15 /* Views */,
+				B4C6EF71288990C400284A15 /* Controller */,
+				B4C6EF72288990E700284A15 /* Resources */,
 			);
 			path = BitCoinPriceCheck;
+			sourceTree = "<group>";
+		};
+		B4C6EF6F2889908200284A15 /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6EF69288982EC00284A15 /* Info.plist */,
+				B4C6EF5B288982EA00284A15 /* AppDelegate.swift */,
+				B4C6EF5D288982EA00284A15 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		B4C6EF70288990A600284A15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6EF61288982EA00284A15 /* Main.storyboard */,
+				B4C6EF66288982EC00284A15 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4C6EF71288990C400284A15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6EF5F288982EA00284A15 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4C6EF72288990E700284A15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6EF64288982EC00284A15 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B4C6EF732889911000284A15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L5944LH5MU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BitCoinPriceCheck/Info.plist;
+				INFOPLIST_FILE = "BitCoinPriceCheck/Application Delegates/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L5944LH5MU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BitCoinPriceCheck/Info.plist;
+				INFOPLIST_FILE = "BitCoinPriceCheck/Application Delegates/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
