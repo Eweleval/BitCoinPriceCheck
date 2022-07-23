@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wN2-ei-fUh">
-                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="850-BF-AHq"/>
-                                </constraints>
-                            </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="N20-Q2-7RO">
                                 <rect key="frame" x="0.0" y="54" width="414" height="165"/>
                                 <subviews>
@@ -82,19 +76,34 @@
                                     <constraint firstItem="RSD-81-0nq" firstAttribute="leading" secondItem="N20-Q2-7RO" secondAttribute="leading" constant="10" id="pOV-Hl-tge"/>
                                 </constraints>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2S-hZ-8c1">
+                                <rect key="frame" x="47" y="373" width="320" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="veL-Yh-XV8"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wN2-ei-fUh">
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="850-BF-AHq"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background Color"/>
                         <constraints>
                             <constraint firstItem="N20-Q2-7RO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="1Ar-sN-HsX"/>
+                            <constraint firstItem="F2S-hZ-8c1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9VX-JQ-PbD"/>
                             <constraint firstItem="wN2-ei-fUh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dx0-Ie-asW"/>
                             <constraint firstItem="wN2-ei-fUh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JQZ-TP-D2I"/>
                             <constraint firstItem="wN2-ei-fUh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5z-0o-lpA"/>
+                            <constraint firstItem="F2S-hZ-8c1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SeX-md-wW6"/>
                             <constraint firstItem="N20-Q2-7RO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bnX-Qw-gKg"/>
                             <constraint firstItem="N20-Q2-7RO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zJp-NX-1vw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cryptoPicker" destination="F2S-hZ-8c1" id="65H-bM-nPr"/>
                         <outlet property="currencyLabel" destination="rCl-hU-uaK" id="XIt-l7-hok"/>
                         <outlet property="currencyPicker" destination="wN2-ei-fUh" id="Uq6-B2-W4g"/>
                         <outlet property="priceLabel" destination="E1s-rd-Yoo" id="FL4-WD-Lc5"/>
@@ -108,13 +117,13 @@
     <resources>
         <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Background Color">
-            <color red="0.50600000000000001" green="0.92500000000000004" blue="0.92500000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50599998235702515" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Icon Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Title Color">
-            <color red="0.188" green="0.20799999999999999" blue="0.28599999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18799999356269836" green="0.20800000429153442" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,16 +15,37 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return coinManager.currencyArray.count
+        switch pickerView{
+        case currencyPicker:
+            return coinManager.currencyArray.count
+        case cryptoPicker:
+            return coinManager.cryptoArray.count
+        default:
+            return 0
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return coinManager.currencyArray[row]
+        switch pickerView{
+        case currencyPicker:
+            return coinManager.currencyArray[row]
+        case cryptoPicker:
+            return coinManager.cryptoArray[row]
+        default:
+            return nil 
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedCurrency = coinManager.currencyArray[row]
-        coinManager.getCoinPrice(for: selectedCurrency)
+        switch pickerView{
+        case currencyPicker:
+            let selectedCurrency = coinManager.currencyArray[row]
+            coinManager.getCoinPrice(for: selectedCurrency)
+        case cryptoPicker:
+            let selectedCoin = coinManager.cryptoArray[row]
+            coinManager.getCoin(coin: selectedCoin)
+        default: break
+        }
     }
 }
 
